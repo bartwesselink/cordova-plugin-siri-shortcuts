@@ -43,7 +43,7 @@ exports.removeAll = function(success, error) {
 };
 
 /**
- * Get the current clicked user activity, and clear if variable set to true
+ * Get the current clicked user activity, and return `null` if none
  * @param {function(data) : void} success Function to call upon succesful fetch
  * @param {function(error) : void} error  Function to call upon unsuccessful removal
  * @return void

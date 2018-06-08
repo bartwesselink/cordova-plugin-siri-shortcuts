@@ -81,7 +81,7 @@ Remove all shortcuts from the application
 <a name="getActivatedShortcut"></a>
 
 ## getActivatedShortcut(success, error) ⇒
-Get the current clicked user activity, and clear if variable set to true
+Get the current clicked user activity, and return `null` if none
 
 **Kind**: global function  
 **Returns**: void  
