@@ -88,14 +88,6 @@ Get the current clicked user activity, and clear if variable set to true
 
 | Param | Type | Description |
 | --- | --- | --- |
-| success | <code>function</code> | Function to call upon succesful fetch. Data returns either `null` when there is no activated shortcut, or a key-value object containing:
- ```
- {
-    persistentIdentifier: string;
-    title: string;
-    userInfo: object;
- }
- ```
- |
+| success | <code>function</code> | Function to call upon succesful fetch. Data returns either `null` when there is no activated shortcut, or a key-value object containing: ` { persistentIdentifier: string; title: string; userInfo: object; }` |
 | error | <code>function</code> | Function to call upon unsuccessful removal |
 
