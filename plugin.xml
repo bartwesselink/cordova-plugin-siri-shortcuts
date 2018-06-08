@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-siri-shortcuts" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SiriShortcuts</name>
+    <js-module name="SiriVoiceKit" src="www/SiriShortcuts.js">
+        <clobbers target="cordova.plugins.SiriShortcuts" />
+    </js-module>
+
+    <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SiriShortcuts">
+                <param name="ios-package" value="SiriShortcuts" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSUserActivityTypes">
+            <array>
+                <string>$PACKAGE_NAME.shortcut</string>
+            </array>
+        </config-file>
+        <header-file src="src/ios/SiriShortcuts-Bridging-Header.h"/>
+        <source-file src="src/ios/SiriShortcuts.swift" />
+        <source-file src="src/ios/ActivityDataHolder.swift" />
+        <source-file src="src/ios/UserActivityDelegate.swift" />
+
+        <source-file src="src/ios/AppDelegate+SiriShortcuts.m" />
+
+        <header-file src="src/ios/AppDelegate+SiriShortcuts.h" />
+    </platform>
+</plugin>
