@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-siri-shortcuts" version="0.0.4" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-siri-shortcuts" version="0.0.5" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>SiriShortcuts</name>
     <js-module name="SiriVoiceKit" src="www/SiriShortcuts.js">
         <clobbers target="cordova.plugins.SiriShortcuts" />
@@ -19,12 +19,13 @@
             </array>
         </config-file>
         <header-file src="src/ios/SiriShortcuts-Bridging-Header.h"/>
+        <header-file src="src/ios/AppDelegate+SiriShortcuts.h" />
+
         <source-file src="src/ios/SiriShortcuts.swift" />
         <source-file src="src/ios/ActivityDataHolder.swift" />
         <source-file src="src/ios/UserActivityDelegate.swift" />
-
         <source-file src="src/ios/AppDelegate+SiriShortcuts.m" />
+        <source-file src="src/ios/ShortcutPresentedDelegate.swift" />
 
-        <header-file src="src/ios/AppDelegate+SiriShortcuts.h" />
     </platform>
 </plugin>
