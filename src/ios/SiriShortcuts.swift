@@ -14,7 +14,7 @@ import IntentsUI
         return activityName
     }
 
-    func donate(_ command: CDVInvokedUrlCommand) {
+    @objc(donate:) func donate(_ command: CDVInvokedUrlCommand) {
         self.commandDelegate!.run(inBackground: {
             if #available(iOS 12.0, *) {
                 self.activity = self.createUserActivity(from: command, makeActive: true)
@@ -30,7 +30,7 @@ import IntentsUI
         })
     }
 
-    func present(_ command: CDVInvokedUrlCommand) {
+    @objc(present:) func present(_ command: CDVInvokedUrlCommand) {
         self.commandDelegate!.run(inBackground: {
             if #available(iOS 12.0, *) {
                 self.activity = self.createUserActivity(from: command, makeActive: false)
@@ -60,7 +60,7 @@ import IntentsUI
         })
     }
 
-    func remove(_ command: CDVInvokedUrlCommand) {
+    @objc(remove:) func remove(_ command: CDVInvokedUrlCommand) {
         self.commandDelegate!.run(inBackground: {
             if #available(iOS 12.0, *) {
                 // convert all string values to objects, such that they can be removed
@@ -80,7 +80,7 @@ import IntentsUI
         })
     }
 
-    func removeAll(_ command: CDVInvokedUrlCommand) {
+    @objc(removeAll:) func removeAll(_ command: CDVInvokedUrlCommand) {
         self.commandDelegate!.run(inBackground: {
             if #available(iOS 12.0, *) {
                 NSUserActivity.deleteAllSavedUserActivities(completionHandler: {
@@ -92,7 +92,7 @@ import IntentsUI
         })
     }
 
-    func getActivatedShortcut(_ command: CDVInvokedUrlCommand) {
+    @objc(getActivatedShortcut:) func getActivatedShortcut(_ command: CDVInvokedUrlCommand) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
         self.commandDelegate!.run(inBackground: {
