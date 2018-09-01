@@ -68,7 +68,7 @@ import IntentsUI
                 var persistentIdentifiers: [NSUserActivityPersistentIdentifier] = []
 
                 for stringIdentifier in stringIdentifiers {
-                    persistentIdentifiers.append(NSUserActivityPersistentIdentifier(rawValue: stringIdentifier))
+                    persistentIdentifiers.append(NSUserActivityPersistentIdentifier(stringIdentifier))
                 }
 
                 NSUserActivity.deleteSavedUserActivities(withPersistentIdentifiers: persistentIdentifiers, completionHandler: {
