@@ -59,10 +59,20 @@ exports.removeAll = function(success, error) {
 
 /**
  * Get the current clicked user activity, and return `null` if none
+ * @param {object} options Options to specify for getting the shortcut
+ * @param {string} options.clear Clear the currently activated shortcut, defaults to true
  * @param {function(data) : void} success Function to call upon succesful fetch
  * @param {function(error) : void} error  Function to call upon unsuccessful removal
  * @return void
  */
-exports.getActivatedShortcut = function(success, error) {
-    exec(success, error, 'SiriShortcuts', 'getActivatedShortcut');
+exports.getActivatedShortcut = function(options, success, error) {
+    if (typeof options === typeof {}) {
+        options = {};
+    }
+
+    if (typeof options.clear === typeof undefined) {
+        options.clear = true;
+    }
+
+    exec(success, error, 'SiriShortcuts', 'getActivatedShortcut', [options.clear]);
 };

@@ -1,7 +1,7 @@
 # cordova-plugin-siri-shortcuts
 
 ## Heads up!
-The plugin only works in XCode 10 Beta, and on the iOS 12 platform.
+The plugin only works in XCode 10, and on the iOS 12 platform.
 
 ## Information
 This plugin adds support for donating and removing Siri Shortcuts. The plugin adds the `cordova.plugins.SiriShortcuts` to the global space, but this is only available
@@ -101,7 +101,7 @@ Remove all shortcuts from the application
 
 <a name="getActivatedShortcut"></a>
 
-## getActivatedShortcut(success, error) ⇒
+## getActivatedShortcut(options, success, error) ⇒
 Get the current clicked user activity, and return `null` if none
 
 **Kind**: global function  
@@ -109,6 +109,8 @@ Get the current clicked user activity, and return `null` if none
 
 | Param | Type | Description |
 | --- | --- | --- |
+| options | <code>object</code> | Options to specify for getting the shortcut |
+| options.clear | <code>boolean</code> | Clear the currently activated shortcut, defaults to true |
 | success | <code>function</code> | Function to call upon succesful fetch. Data returns either `null` when there is no activated shortcut, or a key-value object containing: ` { persistentIdentifier: string; title: string; userInfo: object; }` |
 | error | <code>function</code> | Function to call upon unsuccessful removal |
 

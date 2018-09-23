@@ -42,7 +42,9 @@ import IntentsUI
                     let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
                     viewController.delegate = self.shortcutPresentedDelegate!
 
-                    self.viewController?.present(viewController, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.viewController?.present(viewController, animated: true, completion: nil)
+                    }
 
                     // tell Cordova we're all OK
                     self.sendStatusOk(command)
@@ -118,6 +120,11 @@ import IntentsUI
                         status: CDVCommandStatus_OK,
                         messageAs: returnData as [AnyHashable: Any]
                     )
+
+                    let clear = command.arguments[0] as? Bool ?? true
+                    if clear {
+                        appDelegate.userActivity = nil
+                    }
                 }
 
                 self.send(pluginResult: pluginResult!, command: command)
