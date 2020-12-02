@@ -5,8 +5,6 @@
         <clobbers target="cordova.plugins.SiriShortcuts" />
     </js-module>
 
-    <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
-
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="SiriShortcuts">
